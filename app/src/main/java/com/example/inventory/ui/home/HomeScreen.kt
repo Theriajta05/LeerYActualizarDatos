@@ -72,7 +72,7 @@ fun HomeScreen(
     navigateToItemEntry: () -> Unit,
     navigateToItemUpdate: (Int) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: HomeViewModel = viewModel(factory = AppViewModelProvider.Factory)
+            viewModel: HomeViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     val homeUiState by viewModel.homeUiState.collectAsState()
@@ -216,4 +216,3 @@ fun InventoryItemPreview() {
         )
     }
 }
-

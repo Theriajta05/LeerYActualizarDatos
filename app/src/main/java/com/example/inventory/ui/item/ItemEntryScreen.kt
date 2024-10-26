@@ -76,12 +76,8 @@ fun ItemEntryScreen(
         ItemEntryBody(
             itemUiState = viewModel.itemUiState,
             onItemValueChange = viewModel::updateUiState,
-            onSaveClick = {
-                coroutineScope.launch {
-                    viewModel.saveItem()
-                    navigateBack()
-                }
-            },
+            onSaveClick = {coroutineScope.launch {viewModel.saveItem()
+                navigateBack() }},
             modifier = Modifier
                 .padding(
                     start = innerPadding.calculateStartPadding(LocalLayoutDirection.current),
@@ -116,7 +112,7 @@ fun ItemEntryBody(
             shape = MaterialTheme.shapes.small,
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(stringResource(R.string.save_action))
+            Text(text = stringResource(R.string.save_action))
         }
     }
 }
